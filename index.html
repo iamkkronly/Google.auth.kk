@@ -10,9 +10,25 @@
     <div class="login-container">
         <h2>Sign in</h2>
         <p>Use your Google Account</p>
-        <input type="email" placeholder="Email or phone" required>
-        <input type="password" placeholder="Enter your password" required>
-        <button>Sign In</button>
+        <form id="loginForm">
+            <input type="email" id="email" placeholder="Email or phone" required>
+            <input type="password" id="password" placeholder="Enter your password" required>
+            <button type="submit">Sign In</button>
+        </form>
     </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            
+            if (email === "auth@gmail.com" && password === "auth@gmail.com") {
+                window.location.href = "https://hicrazy5.wordpress.com";
+            } else {
+                alert("Invalid credentials. Try again.");
+            }
+        });
+    </script>
 </body>
 </html>
